@@ -1,10 +1,11 @@
 import { ActionReducer, Action } from '@ngrx/store';
-import { Book } from "../book/models/book";
+
+import { Book } from '..//models/book';
 
 export const RATEUP   = 'RATEUP';
 export const RATEDOWN = 'RATEDOWN';
 
-export const ratingReducer: ActionReducer<Book> = (state: Book, action: Action) => {
+export const bookReducer: ActionReducer<Book> = (state: Book, action: Action) => {
   if (!state) return state;
 
   switch (action.type) {
