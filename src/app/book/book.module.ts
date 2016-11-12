@@ -7,6 +7,7 @@ import { bookReducer } from './reducers/book.reducer';
 import { BookComponent }     from './book.component';
 import { BookCardComponent } from './book-card/book-card.component';
 import { SelectPipe }        from './pipes/select/select.pipe';
+import { BookFormComponent } from './book-form/book-form.component';
 
 @NgModule({
   imports: [
@@ -14,6 +15,6 @@ import { SelectPipe }        from './pipes/select/select.pipe';
     StoreModule.provideStore({ book: bookReducer })
   ],
   exports: [BookComponent],
-  declarations: [BookComponent, BookCardComponent, SelectPipe]
+  declarations: [BookComponent, BookCardComponent, SelectPipe, BookFormComponent]
 })
 export class BookModule { }
