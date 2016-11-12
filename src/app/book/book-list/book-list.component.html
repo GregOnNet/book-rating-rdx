@@ -1,3 +1,1 @@
-<p>
-  book-list works!
-</p>
+<br-book-card [book]="b" *ngFor="let b of appState | async | select:'books'"></br-book-card>

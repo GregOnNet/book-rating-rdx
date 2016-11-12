@@ -1,6 +1,6 @@
 <div>
-  <h3>{{ book | async | select:'title' }} <small>Rating: {{ book | async | select:'rating' }}</small></h3>
-  <h5>{{ book | async | select:'subtitle' }}</h5>
+  <h3>{{ book.title }} <small>Rating: {{ book.rating }}</small></h3>
+  <h5>{{ book.subtitle }}</h5>
   <div>
     <button (click)="rateUp()">Like</button>
     <button (click)="rateDown()">Dislike</button>

@@ -1,5 +1,4 @@
-import { Component }  from '@angular/core';
-import { Observable } from 'rxjs';
+import {Component, Input}  from '@angular/core';
 import { Store }      from '@ngrx/store';
 
 import { Book }             from '../models/book';
@@ -15,11 +14,9 @@ interface AppState {
   styleUrls: ['book-card.component.scss']
 })
 export class BookCardComponent {
-  book: Observable<Book>;
+  @Input() book: Book;
 
-  constructor(private store: Store<AppState>) {
-    this.book = store.select('book') as Observable<Book>;
-  }
+  constructor(private store: Store<AppState>) { }
 
   rateUp() {
     this.store.dispatch({ type: RATEUP });
