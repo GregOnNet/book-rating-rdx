@@ -1,6 +1,6 @@
 import { ActionReducer, Action } from '@ngrx/store';
 
-import { Book } from '..//models/book';
+import { Book } from '../models/book';
 
 export const RATEUP   = 'RATEUP';
 export const RATEDOWN = 'RATEDOWN';
