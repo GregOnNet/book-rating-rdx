@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { Store }      from '@ngrx/store';
 
 import { Book }             from '../models/book';
-import { RATEUP, RATEDOWN } from '../reducers/books.reducer';
+import { RATEUP, RATEDOWN } from '../reducers/book.reducer';
 
 interface AppState {
   book: Book;

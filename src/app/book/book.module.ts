@@ -2,7 +2,7 @@ import { NgModule }     from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StoreModule }  from '@ngrx/store';
 
-import { bookReducer } from './reducers/books.reducer';
+import { bookReducer } from './reducers/book.reducer';
 
 import { BookComponent }     from './book.component';
 import { BookCardComponent } from './book-card/book-card.component';
