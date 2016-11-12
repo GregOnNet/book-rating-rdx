@@ -1,5 +1,5 @@
 <form (ngSubmit)="addBook()">
-  <input type="text" [(ngModel)]="book.title">
-  <input type="text" [(ngModel)]="book.subtitle">
+  <input type="text" name="title" [(ngModel)]="book.title">
+  <input type="text" name="subtitle" [(ngModel)]="book.subtitle">
   <button type="submit">ADD</button>
 </form>
