@@ -2,8 +2,11 @@ import { Component, OnInit } from '@angular/core';
 
 import { Store }      from "@ngrx/store";
 import { Observable } from "rxjs";
+import 'rxjs/add/operator/let';
+import 'rxjs/add/operator/map';
 
 import { AppState } from "../reducers/books.reducer";
+import { Book }     from "../models/book";
 
 @Component({
   selector: 'br-book-list',
@@ -11,12 +14,13 @@ import { AppState } from "../reducers/books.reducer";
   styleUrls: ['./book-list.component.scss']
 })
 export class BookListComponent implements OnInit {
-  appState: Observable<AppState>;
+  books: Observable<Book[]>;
 
   constructor(private store: Store<AppState>) { }
 
   ngOnInit() {
-    this.appState = this.store.select('books') as Observable<AppState>;
+    this.books = this.store
+      .select('books')
+      .let((state: Observable<AppState>) => state.map(current => current.books));
   }
-
 }
