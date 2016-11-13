@@ -1,14 +1,16 @@
-import {Component, Input}  from '@angular/core';
+import {Component, Input, ChangeDetectionStrategy}  from '@angular/core';
+
 import { Store }      from '@ngrx/store';
 
 import { Book }             from '../models/book';
 import { RATEUP, RATEDOWN } from '../reducers/book.reducer';
-import {AppState} from "../reducers/books.reducer";
+import { AppState }          from "../reducers/books.reducer";
 
 @Component({
   selector: 'br-book-card',
   templateUrl: 'book-card.component.html',
-  styleUrls: ['book-card.component.scss']
+  styleUrls: ['book-card.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BookCardComponent {
   @Input() book: Book;
