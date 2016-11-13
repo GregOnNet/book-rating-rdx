@@ -3,10 +3,7 @@ import { Store }      from '@ngrx/store';
 
 import { Book }             from '../models/book';
 import { RATEUP, RATEDOWN } from '../reducers/book.reducer';
-
-interface AppState {
-  book: Book;
-}
+import {AppState} from "../reducers/books.reducer";
 
 @Component({
   selector: 'br-book-card',
