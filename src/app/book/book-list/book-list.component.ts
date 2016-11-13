@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {AppState} from "../reducers/books.reducer";
-import {Store} from "@ngrx/store";
-import {Book} from "../models/book";
-import {Observable} from "rxjs";
+
+import { Store }      from "@ngrx/store";
+import { Observable } from "rxjs";
+
+import { AppState } from "../reducers/books.reducer";
 
 @Component({
   selector: 'br-book-list',
