@@ -16,10 +16,10 @@ export class BookCardComponent {
   constructor(private store: Store<AppState>) { }
 
   rateUp() {
-    this.store.dispatch({ type: RATEUP });
+    this.store.dispatch({ type: RATEUP, payload: this.book });
   }
 
   rateDown() {
-    this.store.dispatch({ type: RATEDOWN });
+    this.store.dispatch({ type: RATEDOWN, payload: this.book });
   }
 }
