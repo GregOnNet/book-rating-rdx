@@ -1,6 +1,6 @@
 import { NgModule }     from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule }  from '@angular/forms';
+import { ReactiveFormsModule }  from '@angular/forms';
 
 import { StoreModule }         from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -16,7 +16,7 @@ import { BookListComponent } from './book-list/book-list.component';
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
+    ReactiveFormsModule,
     StoreModule.provideStore({ books: booksReducer }),
     StoreDevtoolsModule.instrumentOnlyWithExtension()
   ],

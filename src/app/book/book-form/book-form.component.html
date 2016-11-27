@@ -1,11 +1,11 @@
-<form (ngSubmit)="addBook()" class="ui form">
+<form [formGroup]="bookForm" (ngSubmit)="addBook()" class="ui form">
   <div class="field">
     <label>Title</label>
-    <input type="text" name="title" [(ngModel)]="book.title">
+    <input type="text" name="title" formControlName="title">
   </div>
   <div class="field">
     <label>Subtitle</label>
-    <input type="text" name="subtitle" [(ngModel)]="book.subtitle">
+    <input type="text" name="subtitle" formControlName="subtitle">
   </div>
   <button class="ui button" type="submit">Add</button>
 </form>
