@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store }             from '@ngrx/store';
 
 import { Book } from '../models/book';
-import {ADD, AppState}  from '../reducers/books.reducer';
+import { ADD, AppState }  from '../reducers/books.reducer';
 
 @Component({
   selector: 'br-book-form',
@@ -10,7 +10,6 @@ import {ADD, AppState}  from '../reducers/books.reducer';
   styleUrls: ['./book-form.component.scss']
 })
 export class BookFormComponent implements OnInit {
-
   book: Book;
 
   constructor(private store: Store<AppState>) { }
@@ -22,5 +21,4 @@ export class BookFormComponent implements OnInit {
   addBook() {
     this.store.dispatch({ type: ADD, payload: this.book });
   }
-
 }
