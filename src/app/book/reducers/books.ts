@@ -1,15 +1,21 @@
-import { AppState } from '../shared/app-state';
+import '@ngrx/core/add/operator/select';
+
+import { Observable } from 'rxjs';
 import { Book } from '../models/book';
 
 export const ADD = 'ADD';
 export const RATEUP   = 'RATEUP';
 export const RATEDOWN = 'RATEDOWN';
 
-export const initialState: AppState = {
+export interface State {
+  books: Array<Book>;
+}
+
+export const initialState: State = {
   books: []
 };
 
-export function booksReducer(state = initialState, action) {
+export function reducer(state = initialState, action) {
   switch (action.type) {
     case ADD:
       return {
@@ -23,10 +29,14 @@ export function booksReducer(state = initialState, action) {
       };
     case RATEDOWN:
       return {
-      books: state.books.map(book => book.title === action.payload.title
-        ? Object.assign({}, action.payload, { rating: action.payload.rating - 1 })
-        : book)
+        books: state.books.map(book => book.title === action.payload.title
+                                ? Object.assign({}, action.payload, { rating: action.payload.rating - 1 })
+                                : book)
     };
     default: return state;
   }
+}
+
+export function getAllBooks(state$: Observable<State>) {
+  return state$.select(state => state.books);
 }

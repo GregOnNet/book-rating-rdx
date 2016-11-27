@@ -3,7 +3,8 @@ import {Component, Input, ChangeDetectionStrategy}  from '@angular/core';
 import { Store }      from '@ngrx/store';
 
 import { Book } from '../models/book';
-import { AppState, RATEUP, RATEDOWN } from '../reducers/books.reducer';
+import { RATEUP, RATEDOWN } from '../reducers/books';
+import { AppState } from './../shared/app-state';
 
 @Component({
   selector: 'br-book-card',

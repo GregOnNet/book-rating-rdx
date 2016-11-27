@@ -5,7 +5,7 @@ import { ReactiveFormsModule }  from '@angular/forms';
 import { StoreModule }         from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
-import { booksReducer } from './reducers/books.reducer';
+import { reducer } from './reducers';
 
 import { BookComponent }     from './book.component';
 import { BookCardComponent } from './book-card/book-card.component';
@@ -17,7 +17,7 @@ import { BookListComponent } from './book-list/book-list.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    StoreModule.provideStore({ books: booksReducer }),
+    StoreModule.provideStore(reducer),
     StoreDevtoolsModule.instrumentOnlyWithExtension()
   ],
   exports: [BookComponent],

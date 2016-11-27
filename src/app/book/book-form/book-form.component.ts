@@ -3,7 +3,8 @@ import { Store }             from '@ngrx/store';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { Book } from '../models/book';
-import { ADD, AppState }  from '../reducers/books.reducer';
+import { ADD }  from '../reducers/books';
+import { AppState } from './../shared/app-state';
 
 @Component({
   selector: 'br-book-form',
