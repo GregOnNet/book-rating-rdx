@@ -5,8 +5,7 @@ import { Book } from '../../models/book';
 
 @Component({
   selector: 'br-book-form',
-  templateUrl: './book-form.component.html',
-  styleUrls: ['./book-form.component.scss']
+  templateUrl: './book-form.component.html'
 })
 export class BookFormComponent implements OnInit {
   @Output() bookCreated = new EventEmitter<Book>();
