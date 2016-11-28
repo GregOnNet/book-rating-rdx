@@ -32,9 +32,8 @@ export function reducer(state = initialState, action) {
                                 : book)
     };
     case book.ActionTypes.LOAD_SUCCESS:
-      const books = action.payload;
       return {
-        books
+        books: action.payload
       };
     default: return state;
   }

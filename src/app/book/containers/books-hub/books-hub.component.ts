@@ -1,14 +1,13 @@
 import { Observable } from 'rxjs';
-import { Store }     from '@ngrx/store';
+import { Store }      from '@ngrx/store';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 
 import { Book }  from '../../models/book';
-
 import { State } from '../../reducers/';
 
 import * as fromRoot from '../../reducers';
-import * as book from '../../actions/book';
+import * as book     from '../../actions/book';
 
 @Component({
   selector: 'br-books-hub',
