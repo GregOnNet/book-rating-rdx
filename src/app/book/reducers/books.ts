@@ -3,6 +3,8 @@ import '@ngrx/core/add/operator/select';
 import { Observable } from 'rxjs';
 import { Book } from '../models/book';
 
+import * as book from '../actions/book';
+
 export const ADD = 'ADD';
 export const RATEUP   = 'RATEUP';
 export const RATEDOWN = 'RATEDOWN';
@@ -33,6 +35,11 @@ export function reducer(state = initialState, action) {
                                 ? Object.assign({}, action.payload, { rating: action.payload.rating - 1 })
                                 : book)
     };
+    case book.ActionTypes.LOAD_SUCCESS:
+      const books = action.payload;
+      return {
+        books
+      };
     default: return state;
   }
 }
