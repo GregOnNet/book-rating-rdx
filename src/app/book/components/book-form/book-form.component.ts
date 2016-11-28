@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
-import { Book } from '../models/book';
+import { Book } from '../../models/book';
 
 @Component({
   selector: 'br-book-form',
