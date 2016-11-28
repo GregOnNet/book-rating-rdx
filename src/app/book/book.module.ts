@@ -9,7 +9,6 @@ import { reducer } from './reducers';
 
 import { BookComponent }     from './book.component';
 import { BookCardComponent } from './book-card/book-card.component';
-import { SelectPipe }        from './pipes/select/select.pipe';
 import { BookFormComponent } from './book-form/book-form.component';
 import { BookListComponent } from './book-list/book-list.component';
 
@@ -21,6 +20,6 @@ import { BookListComponent } from './book-list/book-list.component';
     StoreDevtoolsModule.instrumentOnlyWithExtension()
   ],
   exports: [BookComponent],
-  declarations: [BookComponent, BookCardComponent, SelectPipe, BookFormComponent, BookListComponent]
+  declarations: [BookComponent, BookCardComponent, BookFormComponent, BookListComponent]
 })
 export class BookModule { }
