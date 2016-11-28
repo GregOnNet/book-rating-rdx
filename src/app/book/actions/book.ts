@@ -3,6 +3,9 @@ import { Book } from '../models/book';
 import { type } from '../utils';
 
 export const ActionTypes = {
+  ADD:           type('[Book] Add'),
+  RATEUP:        type('[Book] Rate Up'),
+  RATEDOWN:      type('[Book] Rate Down'),
   LOAD:          type('[Book] Load'),
   LOAD_SUCCESS:  type('[Book] Load Success'),
 };

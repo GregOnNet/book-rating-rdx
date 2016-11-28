@@ -1,10 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Store }             from '@ngrx/store';
+import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { Book } from '../models/book';
-import { ADD }  from '../reducers/books';
-import { State } from '../reducers';
 
 @Component({
   selector: 'br-book-form',
@@ -12,19 +9,20 @@ import { State } from '../reducers';
   styleUrls: ['./book-form.component.scss']
 })
 export class BookFormComponent implements OnInit {
+  @Output() bookCreated = new EventEmitter<Book>();
   bookForm: FormGroup;
 
-  constructor(private store: Store<State>, private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.provideForm();
   }
 
   addBook() {
-    let book = new Book(this.bookForm.controls['title'].value, this.bookForm.controls['subtitle'].value, 0);
+    let newBook = new Book(this.bookForm.controls['title'].value, this.bookForm.controls['subtitle'].value, 0);
     this.bookForm.reset();
 
-    this.store.dispatch({ type: ADD, payload: book });
+    this.bookCreated.emit(newBook);
   }
 
   provideForm() {

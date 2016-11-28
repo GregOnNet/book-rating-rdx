@@ -5,10 +5,6 @@ import { Book } from '../models/book';
 
 import * as book from '../actions/book';
 
-export const ADD = 'ADD';
-export const RATEUP   = 'RATEUP';
-export const RATEDOWN = 'RATEDOWN';
-
 export interface State {
   books: Array<Book>;
 }
@@ -19,17 +15,17 @@ export const initialState: State = {
 
 export function reducer(state = initialState, action) {
   switch (action.type) {
-    case ADD:
+    case book.ActionTypes.ADD:
       return {
         books: [...state.books].concat(new Book(action.payload.title, action.payload.subtitle, action.payload.rating))
       };
-    case RATEUP:
+    case book.ActionTypes.RATEUP:
       return {
         books: state.books.map(book => book.title === action.payload.title
                                 ? Object.assign({}, action.payload, { rating: action.payload.rating + 1 })
                                 : book)
       };
-    case RATEDOWN:
+    case book.ActionTypes.RATEDOWN:
       return {
         books: state.books.map(book => book.title === action.payload.title
                                 ? Object.assign({}, action.payload, { rating: action.payload.rating - 1 })

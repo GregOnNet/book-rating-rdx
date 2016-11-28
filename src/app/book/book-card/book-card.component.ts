@@ -4,7 +4,7 @@ import { Store }      from '@ngrx/store';
 
 import { State } from './../reducers';
 import { Book } from '../models/book';
-import { RATEUP, RATEDOWN } from '../reducers/books';
+import * as book from '../actions/book';
 
 @Component({
   selector: 'br-book-card',
@@ -18,10 +18,10 @@ export class BookCardComponent {
   constructor(private store: Store<State>) { }
 
   rateUp() {
-    this.store.dispatch({ type: RATEUP, payload: this.book });
+    this.store.dispatch({ type: book.ActionTypes.RATEUP, payload: this.book });
   }
 
   rateDown() {
-    this.store.dispatch({ type: RATEDOWN, payload: this.book });
+    this.store.dispatch({ type: book.ActionTypes.RATEDOWN, payload: this.book });
   }
 }
