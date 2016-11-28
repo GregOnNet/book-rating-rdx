@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { Book } from '../models/book';
 import { ADD }  from '../reducers/books';
-import { AppState } from './../shared/app-state';
+import { State } from '../reducers';
 
 @Component({
   selector: 'br-book-form',
@@ -14,7 +14,7 @@ import { AppState } from './../shared/app-state';
 export class BookFormComponent implements OnInit {
   bookForm: FormGroup;
 
-  constructor(private store: Store<AppState>, private formBuilder: FormBuilder) { }
+  constructor(private store: Store<State>, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.provideForm();

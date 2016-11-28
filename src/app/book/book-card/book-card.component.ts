@@ -2,9 +2,9 @@ import {Component, Input, ChangeDetectionStrategy}  from '@angular/core';
 
 import { Store }      from '@ngrx/store';
 
+import { State } from './../reducers';
 import { Book } from '../models/book';
 import { RATEUP, RATEDOWN } from '../reducers/books';
-import { AppState } from './../shared/app-state';
 
 @Component({
   selector: 'br-book-card',
@@ -15,7 +15,7 @@ import { AppState } from './../shared/app-state';
 export class BookCardComponent {
   @Input() book: Book;
 
-  constructor(private store: Store<AppState>) { }
+  constructor(private store: Store<State>) { }
 
   rateUp() {
     this.store.dispatch({ type: RATEUP, payload: this.book });
