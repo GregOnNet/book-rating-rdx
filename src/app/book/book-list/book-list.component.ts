@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 
 import { Book }     from '../models/book';
 import * as fromRoot from '../reducers';
+import * as book from '../actions/book';
 
 @Component({
   selector: 'br-book-list',
@@ -19,5 +20,11 @@ export class BookListComponent{
 
   constructor(private store: Store<State>) {
     this.books$ = store.let(fromRoot.getAllBooks);
+
+    this.loadBooks();
+  }
+
+  loadBooks() {
+    this.store.dispatch(new book.LoadAction([]));
   }
 }
