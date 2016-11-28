@@ -13,9 +13,9 @@ import { BookEffects } from './effects/book';
 import { BooksService } from './services/books.service';
 
 import { BookComponent }     from './book.component';
-import { BookCardComponent } from './book-card/book-card.component';
-import { BookFormComponent } from './book-form/book-form.component';
-import { BookListComponent } from './book-list/book-list.component';
+import { BookCardComponent } from './components/book-card/book-card.component';
+import { BookFormComponent } from './components/book-form/book-form.component';
+import { BookListComponent } from './components/book-list/book-list.component';
 import { BooksHubComponent } from './containers/books-hub/books-hub.component';
 
 @NgModule({

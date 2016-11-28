@@ -1,7 +1,9 @@
 <div class="ui container">
   <br-book-form (bookCreated)="addBook($event)"></br-book-form>
-  <br-book-list
+  <br-book-card
+    [book]="book"
+    *ngFor="let book of books$ | async"
     (ratedUp)="rateBookUp($event)"
     (ratedDown)="rateBookDown($event)">
-  </br-book-list>
+  </br-book-card>
 </div>
