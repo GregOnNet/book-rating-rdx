@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 import { Store }     from '@ngrx/store';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 
 import { Book }  from '../../models/book';
@@ -13,6 +13,7 @@ import * as book from '../../actions/book';
 @Component({
   selector: 'br-books-hub',
   templateUrl: './books-hub.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styles: [`
     .ui.cards { padding-top: 25px }
   `]

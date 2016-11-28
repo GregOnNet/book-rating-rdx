@@ -1,11 +1,12 @@
-import { Component, EventEmitter, Output, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { Book } from '../../models/book';
 
 @Component({
   selector: 'br-book-form',
-  templateUrl: './book-form.component.html'
+  templateUrl: './book-form.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BookFormComponent implements OnInit {
   @Output() bookCreated = new EventEmitter<Book>();
