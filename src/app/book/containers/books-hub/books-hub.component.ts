@@ -12,7 +12,10 @@ import * as book from '../../actions/book';
 
 @Component({
   selector: 'br-books-hub',
-  templateUrl: './books-hub.component.html'
+  templateUrl: './books-hub.component.html',
+  styles: [`
+    .ui.cards { padding-top: 25px }
+  `]
 })
 export class BooksHubComponent implements OnInit {
 
