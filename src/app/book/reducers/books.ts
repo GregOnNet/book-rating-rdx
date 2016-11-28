@@ -17,7 +17,7 @@ export function reducer(state = initialState, action) {
   switch (action.type) {
     case book.ActionTypes.ADD:
       return {
-        books: [...state.books].concat(new Book(action.payload.title, action.payload.subtitle, action.payload.rating))
+        books: [...state.books].concat(new Book(action.payload.title, action.payload.description, action.payload.rating))
       };
     case book.ActionTypes.RATEUP:
       return {

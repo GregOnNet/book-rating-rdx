@@ -19,7 +19,7 @@ export class BookFormComponent implements OnInit {
   }
 
   addBook() {
-    let newBook = new Book(this.bookForm.controls['title'].value, this.bookForm.controls['subtitle'].value, 0);
+    let newBook = new Book(this.bookForm.controls['title'].value, this.bookForm.controls['description'].value, 0);
     this.bookForm.reset();
 
     this.bookCreated.emit(newBook);
@@ -28,7 +28,7 @@ export class BookFormComponent implements OnInit {
   provideForm() {
     this.bookForm = this.formBuilder.group({
       title: '',
-      subtitle: ''
+      description: ''
     });
   }
 }
