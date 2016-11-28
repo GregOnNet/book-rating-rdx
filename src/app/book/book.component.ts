@@ -18,4 +18,12 @@ export class BookComponent {
   addBook(newBook: Book) {
     this.store.dispatch({ type: book.ActionTypes.ADD, payload: newBook });
   }
+
+  rateBookUp(ratedBook: Book) {
+    this.store.dispatch({ type: book.ActionTypes.RATEUP, payload: ratedBook });
+  }
+
+  rateBookDown(ratedBook: Book) {
+    this.store.dispatch({ type: book.ActionTypes.RATEDOWN, payload: ratedBook });
+  }
 }

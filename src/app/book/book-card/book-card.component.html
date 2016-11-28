@@ -2,7 +2,7 @@
   <h3>{{ book.title }} <small>Rating: {{ book.rating }}</small></h3>
   <h5>{{ book.subtitle }}</h5>
   <div>
-    <button (click)="rateUp()">Like</button>
-    <button (click)="rateDown()">Dislike</button>
+    <button (click)="ratedUp.emit(book)">Like</button>
+    <button (click)="ratedDown.emit(book)">Dislike</button>
   </div>
 </div>
