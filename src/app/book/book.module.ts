@@ -16,6 +16,7 @@ import { BookComponent }     from './book.component';
 import { BookCardComponent } from './book-card/book-card.component';
 import { BookFormComponent } from './book-form/book-form.component';
 import { BookListComponent } from './book-list/book-list.component';
+import { BooksHubComponent } from './containers/books-hub/books-hub.component';
 
 @NgModule({
   imports: [
@@ -27,6 +28,6 @@ import { BookListComponent } from './book-list/book-list.component';
   ],
   providers: [BooksService],
   exports: [BookComponent],
-  declarations: [BookComponent, BookCardComponent, BookFormComponent, BookListComponent]
+  declarations: [BookComponent, BookCardComponent, BookFormComponent, BookListComponent, BooksHubComponent]
 })
 export class BookModule { }

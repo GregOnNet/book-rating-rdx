@@ -12,8 +12,7 @@ import * as book from '../actions/book';
 
 @Component({
   selector: 'br-book-list',
-  templateUrl: './book-list.component.html',
-  styleUrls: ['./book-list.component.scss']
+  templateUrl: './book-list.component.html'
 })
 export class BookListComponent{
   books$: Observable<Book[]>;
